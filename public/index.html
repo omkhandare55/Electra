@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Electra AI — Advanced Election Simulator &amp; Education Engine. Simulate elections, learn about democracy, and get AI-powered strategic insights.">
+  <meta name="keywords" content="election simulator, election education, Indian elections, campaign strategy, AI election analysis">
+  <meta name="author" content="Electra AI">
+  <meta name="theme-color" content="#0a0a1a">
+  <title>Electra AI — Election Simulator &amp; Education Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <!-- Skip Navigation for Accessibility -->
+  <a href="#main-content" class="skip-link" id="skip-nav">Skip to main content</a>
+
+  <!-- Animated Background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <div class="logo" aria-label="Electra AI Logo">
+        <span class="logo-icon" aria-hidden="true">⚡</span>
+        <div>
+          <h1 class="logo-text">Electra AI</h1>
+          <p class="logo-sub">Election Simulator Engine</p>
+        </div>
+      </div>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <button class="nav-link active" data-tab="simulator" id="nav-simulator" aria-selected="true" role="tab">
+          <span aria-hidden="true">🗳️</span> Simulator
+        </button>
+        <button class="nav-link" data-tab="mentor" id="nav-mentor" aria-selected="false" role="tab">
+          <span aria-hidden="true">🎓</span> Learn
+        </button>
+        <button class="nav-link" data-tab="analyzer" id="nav-analyzer" aria-selected="false" role="tab">
+          <span aria-hidden="true">📊</span> Analyzer
+        </button>
+      </nav>
+      <div class="header-badge">
+        <span class="badge-dot" id="gemini-status" aria-label="AI Status"></span>
+        <span class="badge-text" id="gemini-label">AI Engine</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main" role="main">
+    <div class="container">
+
+      <!-- ═══ SIMULATOR TAB ═══ -->
+      <section class="tab-panel active" id="panel-simulator" role="tabpanel" aria-labelledby="nav-simulator">
+        <div class="hero">
+          <h2 class="hero-title">Simulate Your <span class="gradient-text">Election Campaign</span></h2>
+          <p class="hero-desc">Configure your strategy, make promises, choose your audience — and see if you can win the election.</p>
+        </div>
+
+        <div class="sim-grid">
+          <!-- Configuration Panel -->
+          <div class="card config-card">
+            <div class="card-header">
+              <h3 class="card-title"><span aria-hidden="true">⚙️</span> Campaign Configuration</h3>
+            </div>
+            <form id="sim-form" class="sim-form" aria-label="Election simulation configuration form">
+              <!-- Row 1 -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="region_type" class="form-label">Region Type</label>
+                  <select id="region_type" class="form-select" required aria-required="true">
+                    <option value="urban">🏙️ Urban</option>
+                    <option value="rural">🌾 Rural</option>
+                    <option value="mixed" selected>🏘️ Mixed</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget" class="form-label">Campaign Budget</label>
+                  <select id="budget" class="form-select" required aria-required="true">
+                    <option value="low">💰 Low</option>
+                    <option value="medium" selected>💰💰 Medium</option>
+                    <option value="high">💰💰💰 High</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="campaign_strategy" class="form-label">Campaign Strategy</label>
+                  <select id="campaign_strategy" class="form-select" required aria-required="true">
+                    <option value="social_media">📱 Social Media</option>
+                    <option value="rallies">📢 Rallies</option>
+                    <option value="door_to_door">🚪 Door to Door</option>
+                    <option value="mixed" selected>🔀 Mixed</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="target_audience" class="form-label">Target Audience</label>
+                  <select id="target_audience" class="form-select" required aria-required="true">
+                    <option value="youth">👨‍🎓 Youth</option>
+                    <option value="farmers">👨‍🌾 Farmers</option>
+                    <option value="middle_class">👨‍💼 Middle Class</option>
+                    <option value="women">👩 Women</option>
+                    <option value="seniors">👴 Seniors</option>
+                    <option value="mixed" selected>👥 Mixed</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="opponent_strength" class="form-label">Opponent Strength</label>
+                  <select id="opponent_strength" class="form-select">
+                    <option value="weak">😌 Weak</option>
+                    <option value="medium" selected>⚔️ Medium</option>
+                    <option value="strong">💪 Strong</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="user_level" class="form-label">Your Experience</label>
+                  <select id="user_level" class="form-select">
+                    <option value="beginner" selected>🌱 Beginner</option>
+                    <option value="intermediate">📚 Intermediate</option>
+                    <option value="advanced">🎯 Advanced</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Promises -->
+              <div class="form-group">
+                <label class="form-label">Campaign Promises <span class="form-hint">(Select 1-5)</span></label>
+                <div class="promises-grid" role="group" aria-label="Select campaign promises">
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="education" checked> 📚 Education</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="jobs" checked> 💼 Jobs</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="healthcare"> 🏥 Healthcare</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="infrastructure"> 🏗️ Infrastructure</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="subsidies"> 🎫 Subsidies</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="technology"> 💻 Technology</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="housing"> 🏠 Housing</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="security"> 🛡️ Security</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="environment"> 🌿 Environment</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="corruption"> ⚖️ Anti-Corruption</label>
+                </div>
+              </div>
+
+              <!-- Toggles -->
+              <div class="form-row">
+                <label class="toggle-group">
+                  <input type="checkbox" id="incumbency" class="toggle-input">
+                  <span class="toggle-slider" aria-hidden="true"></span>
+                  <span class="toggle-label">Incumbent Candidate</span>
+                </label>
+                <label class="toggle-group">
+                  <input type="checkbox" id="coalition" class="toggle-input">
+                  <span class="toggle-slider" aria-hidden="true"></span>
+                  <span class="toggle-label">Coalition Support</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn-simulate" aria-label="Run election simulation">
+                <span class="btn-icon" aria-hidden="true">⚡</span> Run Simulation
+              </button>
+            </form>
+          </div>
+
+          <!-- Results Panel -->
+          <div class="card results-card" id="results-panel">
+            <div class="card-header">
+              <h3 class="card-title"><span aria-hidden="true">📊</span> Simulation Results</h3>
+              <span class="result-badge" id="result-badge" aria-live="polite"></span>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state">
+              <div class="empty-icon" aria-hidden="true">🗳️</div>
+              <p class="empty-text">Configure your campaign and click <strong>"Run Simulation"</strong> to see results.</p>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-state hidden" id="loading-state" role="status" aria-label="Simulating election">
+              <div class="spinner" aria-hidden="true"></div>
+              <p class="loading-text">Simulating election...</p>
+            </div>
+
+            <!-- Results Content -->
+            <div class="results-content hidden" id="results-content" aria-live="polite">
+              <!-- Score Gauges -->
+              <div class="scores-grid" role="group" aria-label="Campaign scores">
+                <div class="score-card" id="score-popularity">
+                  <div class="score-ring" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <svg viewBox="0 0 100 100" class="score-svg">
+                      <circle cx="50" cy="50" r="42" class="score-track"/>
+                      <circle cx="50" cy="50" r="42" class="score-fill popularity-fill" stroke-dasharray="0 264"/>
+                    </svg>
+                    <span class="score-value" id="val-popularity">0</span>
+                  </div>
+                  <span class="score-label">Popularity</span>
+                </div>
+                <div class="score-card" id="score-trust">
+                  <div class="score-ring" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <svg viewBox="0 0 100 100" class="score-svg">
+                      <circle cx="50" cy="50" r="42" class="score-track"/>
+                      <circle cx="50" cy="50" r="42" class="score-fill trust-fill" stroke-dasharray="0 264"/>
+                    </svg>
+                    <span class="score-value" id="val-trust">0</span>
+                  </div>
+                  <span class="score-label">Trust</span>
+                </div>
+                <div class="score-card" id="score-reach">
+                  <div class="score-ring" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <svg viewBox="0 0 100 100" class="score-svg">
+                      <circle cx="50" cy="50" r="42" class="score-track"/>
+                      <circle cx="50" cy="50" r="42" class="score-fill reach-fill" stroke-dasharray="0 264"/>
+                    </svg>
+                    <span class="score-value" id="val-reach">0</span>
+                  </div>
+                  <span class="score-label">Reach</span>
+                </div>
+              </div>
+
+              <!-- Vote Share & Win Probability -->
+              <div class="metrics-row">
+                <div class="metric-card">
+                  <span class="metric-label">Vote Share</span>
+                  <div class="metric-bar-wrap">
+                    <div class="metric-bar" id="bar-voteshare" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <span class="metric-value" id="val-voteshare">0%</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">Win Probability</span>
+                  <div class="metric-bar-wrap">
+                    <div class="metric-bar" id="bar-winprob" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <span class="metric-value" id="val-winprob">0%</span>
+                </div>
+              </div>
+
+              <!-- Analysis -->
+              <div class="analysis-section" id="analysis-section">
+                <h4 class="analysis-title">📋 Analysis</h4>
+                <p class="analysis-summary" id="analysis-summary"></p>
+                <div class="analysis-lists">
+                  <div class="analysis-col">
+                    <h5 class="list-title strengths-title">✅ Strengths</h5>
+                    <ul class="analysis-list" id="analysis-strengths" aria-label="Campaign strengths"></ul>
+                  </div>
+                  <div class="analysis-col">
+                    <h5 class="list-title weaknesses-title">⚠️ Weaknesses</h5>
+                    <ul class="analysis-list" id="analysis-weaknesses" aria-label="Campaign weaknesses"></ul>
+                  </div>
+                </div>
+                <div class="improvements-section">
+                  <h5 class="list-title improvements-title">💡 Improvements</h5>
+                  <ul class="analysis-list" id="analysis-improvements" aria-label="Suggested improvements"></ul>
+                </div>
+              </div>
+
+              <!-- Smart Advice -->
+              <button class="btn btn-secondary" id="btn-smart-advice" aria-label="Get AI-powered strategic advice">
+                <span aria-hidden="true">🤖</span> Get AI Smart Advice
+              </button>
+              <div class="smart-advice-box hidden" id="smart-advice-box" aria-live="polite">
+                <h4 class="advice-title">🤖 AI Strategic Advice</h4>
+                <div class="advice-content" id="advice-content"></div>
+                <span class="advice-badge" id="advice-badge"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ MENTOR TAB ═══ -->
+      <section class="tab-panel" id="panel-mentor" role="tabpanel" aria-labelledby="nav-mentor">
+        <div class="hero">
+          <h2 class="hero-title">Election <span class="gradient-text">Education Hub</span></h2>
+          <p class="hero-desc">Ask questions about elections, democracy, and political systems. Responses adapt to your knowledge level.</p>
+        </div>
+
+        <div class="mentor-grid">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><span aria-hidden="true">🎓</span> Ask a Question</h3>
+            </div>
+            <form id="mentor-form" class="sim-form" aria-label="Ask educational question">
+              <div class="form-group">
+                <label for="mentor-level" class="form-label">Your Level</label>
+                <select id="mentor-level" class="form-select">
+                  <option value="beginner" selected>🌱 Beginner</option>
+                  <option value="intermediate">📚 Intermediate</option>
+                  <option value="advanced">🎯 Advanced</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mentor-question" class="form-label">Your Question</label>
+                <input type="text" id="mentor-question" class="form-input" placeholder="e.g., How does the election process work in India?" required aria-required="true" maxlength="500" autocomplete="off">
+              </div>
+              <button type="submit" class="btn btn-primary" id="btn-mentor" aria-label="Submit question">
+                <span aria-hidden="true">🔍</span> Get Answer
+              </button>
+            </form>
+
+            <!-- Quick Topics -->
+            <div class="quick-topics" role="group" aria-label="Quick topic suggestions">
+              <span class="form-label">Quick Topics:</span>
+              <div class="topics-row">
+                <button class="topic-chip" data-q="How does the election process work?" aria-label="Ask about election process">Election Process</button>
+                <button class="topic-chip" data-q="What is campaign strategy?" aria-label="Ask about campaign strategy">Campaign Strategy</button>
+                <button class="topic-chip" data-q="Explain voting systems" aria-label="Ask about voting systems">Voting Systems</button>
+                <button class="topic-chip" data-q="What does the Election Commission do?" aria-label="Ask about Election Commission">Election Commission</button>
+                <button class="topic-chip" data-q="Tell me about political parties in India" aria-label="Ask about political parties">Political Parties</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mentor Response -->
+          <div class="card" id="mentor-results">
+            <div class="card-header">
+              <h3 class="card-title"><span aria-hidden="true">💡</span> Response</h3>
+              <span class="level-badge" id="mentor-level-badge"></span>
+            </div>
+            <div class="empty-state" id="mentor-empty">
+              <div class="empty-icon" aria-hidden="true">🎓</div>
+              <p class="empty-text">Ask a question or click a quick topic to start learning!</p>
+            </div>
+            <div class="loading-state hidden" id="mentor-loading" role="status">
+              <div class="spinner" aria-hidden="true"></div>
+              <p class="loading-text">Thinking...</p>
+            </div>
+            <div class="mentor-content hidden" id="mentor-content" aria-live="polite">
+              <div class="mentor-topic" id="mentor-topic-label"></div>
+              <div class="mentor-explanation" id="mentor-explanation"></div>
+              <div class="mentor-steps" id="mentor-steps"></div>
+              <div class="mentor-example" id="mentor-example"></div>
+              <div class="mentor-ai hidden" id="mentor-ai">
+                <h5 class="advice-title">🤖 AI Enhanced Insight</h5>
+                <div id="mentor-ai-content"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ ANALYZER TAB ═══ -->
+      <section class="tab-panel" id="panel-analyzer" role="tabpanel" aria-labelledby="nav-analyzer">
+        <div class="hero">
+          <h2 class="hero-title">Strategy <span class="gradient-text">Quick Analyzer</span></h2>
+          <p class="hero-desc">Quickly check how effective a specific strategy is for your region and audience.</p>
+        </div>
+
+        <div class="analyzer-grid">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><span aria-hidden="true">📊</span> Analyze Strategy</h3>
+            </div>
+            <form id="analyzer-form" class="sim-form" aria-label="Strategy analysis form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="az-region" class="form-label">Region</label>
+                  <select id="az-region" class="form-select" required aria-required="true">
+                    <option value="urban">🏙️ Urban</option>
+                    <option value="rural">🌾 Rural</option>
+                    <option value="mixed" selected>🏘️ Mixed</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="az-strategy" class="form-label">Strategy</label>
+                  <select id="az-strategy" class="form-select" required aria-required="true">
+                    <option value="social_media">📱 Social Media</option>
+                    <option value="rallies">📢 Rallies</option>
+                    <option value="door_to_door">🚪 Door to Door</option>
+                    <option value="mixed" selected>🔀 Mixed</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="az-audience" class="form-label">Audience</label>
+                  <select id="az-audience" class="form-select" required aria-required="true">
+                    <option value="youth">👨‍🎓 Youth</option>
+                    <option value="farmers">👨‍🌾 Farmers</option>
+                    <option value="middle_class">👨‍💼 Middle Class</option>
+                    <option value="mixed" selected>👥 Mixed</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="az-budget" class="form-label">Budget</label>
+                  <select id="az-budget" class="form-select">
+                    <option value="low">💰 Low</option>
+                    <option value="medium" selected>💰💰 Medium</option>
+                    <option value="high">💰💰💰 High</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" id="btn-analyze" aria-label="Analyze strategy effectiveness">
+                <span aria-hidden="true">📊</span> Analyze
+              </button>
+            </form>
+          </div>
+
+          <!-- Analyzer Results -->
+          <div class="card" id="analyzer-results">
+            <div class="card-header">
+              <h3 class="card-title"><span aria-hidden="true">📈</span> Analysis Results</h3>
+            </div>
+            <div class="empty-state" id="analyzer-empty">
+              <div class="empty-icon" aria-hidden="true">📊</div>
+              <p class="empty-text">Select your parameters and click <strong>"Analyze"</strong></p>
+            </div>
+            <div class="loading-state hidden" id="analyzer-loading" role="status">
+              <div class="spinner" aria-hidden="true"></div>
+              <p class="loading-text">Analyzing...</p>
+            </div>
+            <div class="analyzer-content hidden" id="analyzer-content" aria-live="polite">
+              <div class="az-effectiveness" id="az-effectiveness">
+                <span class="az-eff-label">Strategy Effectiveness</span>
+                <span class="az-eff-value" id="az-eff-value">0%</span>
+              </div>
+              <div class="az-bars">
+                <div class="az-bar-group">
+                  <span class="az-bar-label">Region Fit</span>
+                  <div class="metric-bar-wrap"><div class="metric-bar" id="az-bar-region" role="progressbar"></div></div>
+                  <span class="az-bar-value" id="az-val-region">0%</span>
+                </div>
+                <div class="az-bar-group">
+                  <span class="az-bar-label">Audience Fit</span>
+                  <div class="metric-bar-wrap"><div class="metric-bar" id="az-bar-audience" role="progressbar"></div></div>
+                  <span class="az-bar-value" id="az-val-audience">0%</span>
+                </div>
+              </div>
+              <div class="az-recommendation" id="az-recommendation" role="status"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-text">⚡ Electra AI Engine v1.0 — Election Simulator &amp; Education Platform</p>
+      <p class="footer-sub">Built for learning &amp; exploration. No political bias. Powered by Google Gemini AI.</p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
