@@ -201,10 +201,16 @@ function renderResults(data) {
   setBarWidth($('#bar-winprob'), r.winning_probability);
 
   // Analysis
-  $('#analysis-summary').textContent = a.summary;
+  $('#analysis-summary').textContent = a.ai_summary || a.summary;
   renderList($('#analysis-strengths'), a.strengths);
   renderList($('#analysis-weaknesses'), a.weaknesses);
   renderList($('#analysis-improvements'), a.improvements);
+
+  // Show Gemini badge if AI-enhanced
+  if (data.gemini_powered && a.ai_summary) {
+    $('#analysis-summary').insertAdjacentHTML('afterend',
+      '<span class="advice-badge" style="margin-top:6px;display:inline-block">✨ Enhanced by Google Gemini</span>');
+  }
 
   hide($('#smart-advice-box'));
   show($('#results-content'));
@@ -352,6 +358,20 @@ function renderAnalyzer(data) {
   if (data.strategy_effectiveness > 70) rec.classList.add('strong');
   else if (data.strategy_effectiveness > 50) rec.classList.add('moderate');
   else rec.classList.add('weak');
+
+  // Show Gemini AI analysis if available
+  const aiBox = document.getElementById('az-ai-analysis');
+  if (aiBox) aiBox.remove();
+  if (data.ai_analysis) {
+    const div = document.createElement('div');
+    div.id = 'az-ai-analysis';
+    div.className = 'smart-advice-box';
+    div.style.marginTop = '12px';
+    div.innerHTML = `<h4 class="advice-title">🤖 AI Strategy Analysis</h4>
+      <div class="advice-content">${data.ai_analysis}</div>
+      <span class="advice-badge">${data.gemini_powered ? '✨ Google Gemini' : '📋 Fallback'}</span>`;
+    $('#analyzer-content').appendChild(div);
+  }
 
   show($('#analyzer-content'));
 }

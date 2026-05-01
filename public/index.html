@@ -34,13 +34,13 @@
       </div>
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <button class="nav-link active" data-tab="simulator" id="nav-simulator" aria-selected="true" role="tab">
-          <span aria-hidden="true">🗳️</span> Simulator
+          Simulator
         </button>
         <button class="nav-link" data-tab="mentor" id="nav-mentor" aria-selected="false" role="tab">
-          <span aria-hidden="true">🎓</span> Learn
+          Learn
         </button>
         <button class="nav-link" data-tab="analyzer" id="nav-analyzer" aria-selected="false" role="tab">
-          <span aria-hidden="true">📊</span> Analyzer
+          Analyzer
         </button>
       </nav>
       <div class="header-badge">
@@ -65,7 +65,7 @@
           <!-- Configuration Panel -->
           <div class="card config-card">
             <div class="card-header">
-              <h3 class="card-title"><span aria-hidden="true">⚙️</span> Campaign Configuration</h3>
+              <h3 class="card-title">Campaign Configuration</h3>
             </div>
             <form id="sim-form" class="sim-form" aria-label="Election simulation configuration form">
               <!-- Row 1 -->
@@ -73,17 +73,17 @@
                 <div class="form-group">
                   <label for="region_type" class="form-label">Region Type</label>
                   <select id="region_type" class="form-select" required aria-required="true">
-                    <option value="urban">🏙️ Urban</option>
-                    <option value="rural">🌾 Rural</option>
-                    <option value="mixed" selected>🏘️ Mixed</option>
+                    <option value="urban">Urban</option>
+                    <option value="rural">Rural</option>
+                    <option value="mixed" selected>Mixed</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="budget" class="form-label">Campaign Budget</label>
                   <select id="budget" class="form-select" required aria-required="true">
-                    <option value="low">💰 Low</option>
-                    <option value="medium" selected>💰💰 Medium</option>
-                    <option value="high">💰💰💰 High</option>
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
                   </select>
                 </div>
               </div>
@@ -93,21 +93,21 @@
                 <div class="form-group">
                   <label for="campaign_strategy" class="form-label">Campaign Strategy</label>
                   <select id="campaign_strategy" class="form-select" required aria-required="true">
-                    <option value="social_media">📱 Social Media</option>
-                    <option value="rallies">📢 Rallies</option>
-                    <option value="door_to_door">🚪 Door to Door</option>
-                    <option value="mixed" selected>🔀 Mixed</option>
+                    <option value="social_media">Social Media</option>
+                    <option value="rallies">Rallies</option>
+                    <option value="door_to_door">Door to Door</option>
+                    <option value="mixed" selected>Mixed</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="target_audience" class="form-label">Target Audience</label>
                   <select id="target_audience" class="form-select" required aria-required="true">
-                    <option value="youth">👨‍🎓 Youth</option>
-                    <option value="farmers">👨‍🌾 Farmers</option>
-                    <option value="middle_class">👨‍💼 Middle Class</option>
-                    <option value="women">👩 Women</option>
-                    <option value="seniors">👴 Seniors</option>
-                    <option value="mixed" selected>👥 Mixed</option>
+                    <option value="youth">Youth</option>
+                    <option value="farmers">Farmers</option>
+                    <option value="middle_class">Middle Class</option>
+                    <option value="women">Women</option>
+                    <option value="seniors">Seniors</option>
+                    <option value="mixed" selected>Mixed</option>
                   </select>
                 </div>
               </div>
@@ -117,17 +117,17 @@
                 <div class="form-group">
                   <label for="opponent_strength" class="form-label">Opponent Strength</label>
                   <select id="opponent_strength" class="form-select">
-                    <option value="weak">😌 Weak</option>
-                    <option value="medium" selected>⚔️ Medium</option>
-                    <option value="strong">💪 Strong</option>
+                    <option value="weak">Weak</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="strong">Strong</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="user_level" class="form-label">Your Experience</label>
                   <select id="user_level" class="form-select">
-                    <option value="beginner" selected>🌱 Beginner</option>
-                    <option value="intermediate">📚 Intermediate</option>
-                    <option value="advanced">🎯 Advanced</option>
+                    <option value="beginner" selected>Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
                   </select>
                 </div>
               </div>
@@ -136,16 +136,16 @@
               <div class="form-group">
                 <label class="form-label">Campaign Promises <span class="form-hint">(Select 1-5)</span></label>
                 <div class="promises-grid" role="group" aria-label="Select campaign promises">
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="education" checked> 📚 Education</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="jobs" checked> 💼 Jobs</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="healthcare"> 🏥 Healthcare</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="infrastructure"> 🏗️ Infrastructure</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="subsidies"> 🎫 Subsidies</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="technology"> 💻 Technology</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="housing"> 🏠 Housing</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="security"> 🛡️ Security</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="environment"> 🌿 Environment</label>
-                  <label class="promise-chip"><input type="checkbox" name="promises" value="corruption"> ⚖️ Anti-Corruption</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="education" checked> Education</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="jobs" checked> Jobs</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="healthcare"> Healthcare</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="infrastructure"> Infrastructure</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="subsidies"> Subsidies</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="technology"> Technology</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="housing"> Housing</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="security"> Security</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="environment"> Environment</label>
+                  <label class="promise-chip"><input type="checkbox" name="promises" value="corruption"> Anti-Corruption</label>
                 </div>
               </div>
 
@@ -172,7 +172,7 @@
           <!-- Results Panel -->
           <div class="card results-card" id="results-panel">
             <div class="card-header">
-              <h3 class="card-title"><span aria-hidden="true">📊</span> Simulation Results</h3>
+              <h3 class="card-title">Simulation Results</h3>
               <span class="result-badge" id="result-badge" aria-live="polite"></span>
             </div>
 
@@ -286,15 +286,15 @@
         <div class="mentor-grid">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title"><span aria-hidden="true">🎓</span> Ask a Question</h3>
+              <h3 class="card-title">Ask a Question</h3>
             </div>
             <form id="mentor-form" class="sim-form" aria-label="Ask educational question">
               <div class="form-group">
                 <label for="mentor-level" class="form-label">Your Level</label>
                 <select id="mentor-level" class="form-select">
-                  <option value="beginner" selected>🌱 Beginner</option>
-                  <option value="intermediate">📚 Intermediate</option>
-                  <option value="advanced">🎯 Advanced</option>
+                  <option value="beginner" selected>Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
                 </select>
               </div>
               <div class="form-group">
@@ -322,7 +322,7 @@
           <!-- Mentor Response -->
           <div class="card" id="mentor-results">
             <div class="card-header">
-              <h3 class="card-title"><span aria-hidden="true">💡</span> Response</h3>
+              <h3 class="card-title">Response</h3>
               <span class="level-badge" id="mentor-level-badge"></span>
             </div>
             <div class="empty-state" id="mentor-empty">
@@ -357,25 +357,25 @@
         <div class="analyzer-grid">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title"><span aria-hidden="true">📊</span> Analyze Strategy</h3>
+              <h3 class="card-title">Analyze Strategy</h3>
             </div>
             <form id="analyzer-form" class="sim-form" aria-label="Strategy analysis form">
               <div class="form-row">
                 <div class="form-group">
                   <label for="az-region" class="form-label">Region</label>
                   <select id="az-region" class="form-select" required aria-required="true">
-                    <option value="urban">🏙️ Urban</option>
-                    <option value="rural">🌾 Rural</option>
-                    <option value="mixed" selected>🏘️ Mixed</option>
+                    <option value="urban">Urban</option>
+                    <option value="rural">Rural</option>
+                    <option value="mixed" selected>Mixed</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="az-strategy" class="form-label">Strategy</label>
                   <select id="az-strategy" class="form-select" required aria-required="true">
-                    <option value="social_media">📱 Social Media</option>
-                    <option value="rallies">📢 Rallies</option>
-                    <option value="door_to_door">🚪 Door to Door</option>
-                    <option value="mixed" selected>🔀 Mixed</option>
+                    <option value="social_media">Social Media</option>
+                    <option value="rallies">Rallies</option>
+                    <option value="door_to_door">Door to Door</option>
+                    <option value="mixed" selected>Mixed</option>
                   </select>
                 </div>
               </div>
@@ -383,18 +383,18 @@
                 <div class="form-group">
                   <label for="az-audience" class="form-label">Audience</label>
                   <select id="az-audience" class="form-select" required aria-required="true">
-                    <option value="youth">👨‍🎓 Youth</option>
-                    <option value="farmers">👨‍🌾 Farmers</option>
-                    <option value="middle_class">👨‍💼 Middle Class</option>
-                    <option value="mixed" selected>👥 Mixed</option>
+                    <option value="youth">Youth</option>
+                    <option value="farmers">Farmers</option>
+                    <option value="middle_class">Middle Class</option>
+                    <option value="mixed" selected>Mixed</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="az-budget" class="form-label">Budget</label>
                   <select id="az-budget" class="form-select">
-                    <option value="low">💰 Low</option>
-                    <option value="medium" selected>💰💰 Medium</option>
-                    <option value="high">💰💰💰 High</option>
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
                   </select>
                 </div>
               </div>
@@ -407,7 +407,7 @@
           <!-- Analyzer Results -->
           <div class="card" id="analyzer-results">
             <div class="card-header">
-              <h3 class="card-title"><span aria-hidden="true">📈</span> Analysis Results</h3>
+              <h3 class="card-title">Analysis Results</h3>
             </div>
             <div class="empty-state" id="analyzer-empty">
               <div class="empty-icon" aria-hidden="true">📊</div>
